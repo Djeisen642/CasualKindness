@@ -13,5 +13,10 @@
     <string name="pricelessString">Priceless!</string>
     <string name="newActButtonString">Get me an Act!</string>
     <string name="timeAmountString">1 minute</string>
+    <string name="title_activity_display_act">DisplayActActivity</string>
+    <string name="actTitle">Large Text</string>
+    <string name="actDescription" />
+    <string name="actAcceptString">Accept Challenge</string>
+    <string name="actDeclineString">Decline Challenge</string>
 
 </resources>

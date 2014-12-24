@@ -12,7 +12,8 @@
         android:id="@+id/button"
         android:layout_below="@+id/radioGroup"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp" />
+        android:layout_marginTop="23dp"
+        android:onClick="sendMessage"/>
 
     <TextView
         android:layout_width="wrap_content"

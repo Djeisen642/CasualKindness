@@ -1,32 +1,35 @@
 package com.priorityoneexpression.casualkindness;
 
-import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import java.lang.Math;
 
 public class MainActivity extends ActionBarActivity {
 
-    private int moneyRadioButton = R.id.freeMoney;
-    private SeekBar timeSeekBar = null;
+    private int moneyRadioButton = 0;
     private double timeAmount = 0;
+    protected CasualKindness app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        timeSeekBar = (SeekBar) findViewById(R.id.timeSeekBar);
+
+        app = (CasualKindness)getApplication();
+
+        SeekBar timeSeekBar = (SeekBar) findViewById(R.id.timeSeekBar);
         timeSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //timeAmount = progress;
-                double time = progress;
-                timeAmount = 4.0733*Math.exp(time*0.1212)-3.00; // used excel to figure out a progression that worked
+                timeAmount = 4.0733*Math.exp(progress*0.1212)-3.00; // used excel to figure out a progression that worked
                 TextView timeAmountText = (TextView) findViewById(R.id.timeAmount);
                 if (progress == 100) {
                     timeAmount = -1;
@@ -112,28 +115,33 @@ public class MainActivity extends ActionBarActivity {
         switch(view.getId()) {
             case R.id.freeMoney:
                 if (checked)
-                    moneyRadioButton = R.id.freeMoney;
+                    moneyRadioButton = 0;
                     break;
             case R.id.littleMoney:
                 if (checked)
-                    moneyRadioButton = R.id.littleMoney;
+                    moneyRadioButton = 1;
                     break;
             case R.id.middleMoney:
                 if (checked)
-                    moneyRadioButton = R.id.middleMoney;
+                    moneyRadioButton = 2;
                     break;
             case R.id.bigMoney:
                 if (checked)
-                    moneyRadioButton = R.id.bigMoney;
+                    moneyRadioButton = 3;
                     break;
             case R.id.hugeMoney:
                 if (checked)
-                    moneyRadioButton = R.id.hugeMoney;
+                    moneyRadioButton = 4;
                     break;
             case R.id.pricelessMoney:
                 if (checked)
-                    moneyRadioButton = R.id.pricelessMoney;
+                    moneyRadioButton = 5;
                     break;
         }
+    }
+
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, DisplayActActivity.class);
+        startActivity(intent);
     }
 }
