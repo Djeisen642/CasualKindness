@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Casual Kindness</string>
+    <string name="action_settings">Settings</string>
+    <string name="timeString">Choose the amount of time you are willing to spend:</string>
+    <string name="moneyString">Choose the amount of money you are willing to spend:</string>
+    <string name="freeString">Free Please!</string>
+    <string name="littleMoneyString">$</string>
+    <string name="middleMoneyString">$$</string>
+    <string name="bigMoneyString">$$$</string>
+    <string name="hugeMoneyString">$$$$</string>
+    <string name="pricelessString">Priceless!</string>
+    <string name="newActButtonString">Get me an Act!</string>
+    <string name="timeAmountString">1 minute</string>
+
+</resources>
