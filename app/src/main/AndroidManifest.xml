@@ -23,9 +23,6 @@
         <activity
             android:name=".DisplayActActivity"
             android:label="@string/title_activity_display_act">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.priorityoneexpression.casualkindness.MainActivity" />
         </activity>
     </application>
 

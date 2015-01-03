@@ -18,5 +18,6 @@ public class CasualKindness extends Application {
 
         Parse.initialize(this, "3HwsLkZpIG4FrvRDg3GKwOR3jLnj5IG0XQ07h7Yb", "JPTR7O8McreukkFvMkJPVXT61dUIUTEr8CJdH5yG");
 
+        // TODO: Seed local Datastore
     }
 }
