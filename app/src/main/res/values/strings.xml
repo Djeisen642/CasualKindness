@@ -14,9 +14,15 @@
     <string name="newActButtonString">Get me an Act!</string>
     <string name="timeAmountString">1 minute</string>
     <string name="title_activity_display_act">New Act!</string>
-    <string name="actTitle">Large Text</string>
-    <string name="actDescription" />
+    <string name="actTitle">Searching...</string>
+    <string name="actDescription"></string>
     <string name="actAcceptString">Accept Challenge</string>
     <string name="actDeclineString">Decline Challenge</string>
+    <string name="title_activity_story">StoryActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_task_list">List of Acts</string>
+    <string name="taskNameString" />
+    <string name="actNetworkTitleString">No Network Connection</string>
+    <string name="actNetworkMessageString">You are not connected to the internet. To get your act, please connect to the internet.</string>
 
 </resources>

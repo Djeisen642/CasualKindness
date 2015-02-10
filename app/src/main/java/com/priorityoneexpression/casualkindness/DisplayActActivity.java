@@ -1,6 +1,8 @@
 package com.priorityoneexpression.casualkindness;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -13,6 +15,8 @@ import com.parse.GetCallback;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
+import com.priorityoneexpression.casualkindness.db.TaskContract;
+import com.priorityoneexpression.casualkindness.db.TaskDBHelper;
 
 
 public class DisplayActActivity extends ActionBarActivity {
@@ -73,7 +77,21 @@ public class DisplayActActivity extends ActionBarActivity {
     }
 
     public void acceptAct(View view) {
-        // TODO: Add checklist
+		TaskDBHelper helper = new TaskDBHelper(DisplayActActivity.this);
+		SQLiteDatabase db = helper.getWritableDatabase();
+		ContentValues values = new ContentValues();
+
+	    String name = titleView.getText().toString();
+	    String description = descriptionView.getText().toString();
+
+		values.clear();
+		values.put(TaskContract.Columns.NAME, name);
+		values.put(TaskContract.Columns.DESCRIPTION, description);
+
+		db.insertWithOnConflict(TaskContract.TABLE,null,values,SQLiteDatabase.CONFLICT_REPLACE);
+
+        Intent intent = new Intent(this, TaskListActivity.class);
+		startActivity(intent);
     }
 
     public void declineAct(View view) {
